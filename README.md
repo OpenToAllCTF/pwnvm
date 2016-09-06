@@ -26,7 +26,9 @@ You should never have to open VirtualBox to manage the VMs. Everything can be do
 * Reprovision: `vagrant provision [<vm>]`
 * SSH: `vagrant ssh [<vm>]`
 * Adopt changes to _Vagrantfile_: `vagrant reload [<vm>]`
-* It hanged!: `vagrant halt [<vm>]`
+* Bring down VM: `vagrant halt [<vm>]`
+* Bring up VM: `vagrant up [<vm>]`
+* Scrap VM: `vagrant destroy [<vm>]`
 
 ## 32 bit VM
 Although the 64-bit linux vm should be able to do whatever you need, you can also set up a 32 bit version. To do this, simply do `vagrant up pwn32`. The 64-bit (default) VM is named simply "pwn".
