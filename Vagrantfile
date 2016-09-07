@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     u64.vm.box = "ubuntu/trusty64"
     u64.vm.network "private_network", ip: "10.10.10.10"
     u64.vm.provider "virtualbox" do |vb|
-      vb.name = "ubuntu64"
+      vb.name = "pwn ubuntu"
       vb.memory = "2048"
       vb.gui = false
     end
@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     u32.vm.box = "ubuntu/trusty32"
     u32.vm.network "private_network", ip: "10.10.10.11"
     u32.vm.provider "virtualbox" do |vb|
-      vb.name = "ubuntu32"
+      vb.name = "pwn ubuntu32"
       vb.memory = "1024"
       vb.gui = false
     end
