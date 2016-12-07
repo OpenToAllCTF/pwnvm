@@ -8,7 +8,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.forward_agent = true
   config.vm.provision :shell, :path => "vagrant_setup.sh", :privileged => false
   # Sync a folder between the host and all guests.
-  config.vm.synced_folder "~/code", "/code"
+  # Uncomment this line (and adjust as you like)
+  #config.vm.synced_folder "~/code", "/code"
 
   config.vm.define "pwn", primary: true do |u64|
     u64.vm.box = "ubuntu/trusty64"
