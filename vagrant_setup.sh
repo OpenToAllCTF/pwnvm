@@ -52,25 +52,27 @@ cd tools
 
 # Capstone for pwndbg
 git clone https://github.com/aquynh/capstone
-cd capstone
+pushd capstone
 git checkout -t origin/next
 sudo ./make.sh install
 cd bindings/python
 sudo python3 setup.py install # Ubuntu 14.04+, GDB uses Python3
+popd
 
 # pycparser for pwndbg
 sudo pip3 install pycparser # Use pip3 for Python3
 
 # Install radare2
 git clone https://github.com/radare/radare2
-cd radare2
+pushd radare2
 ./sys/install.sh
+popd
 
 # Install binwalk
-cd
 git clone https://github.com/devttys0/binwalk
-cd binwalk
+pushd binwalk
 sudo python setup.py install
+popd
 
 # Install Firmware-Mod-Kit (Removed)
 sudo apt-get -y install git build-essential zlib1g-dev liblzma-dev python-magic
@@ -84,18 +86,19 @@ sudo python setup.py install
 
 # Install Angr
 cd
+pushd tools
 sudo apt-get -y install python-dev libffi-dev build-essential virtualenvwrapper
 sudo pip install virtualenv
 virtualenv angr
 source angr/bin/activate
 pip install angr --upgrade
+popd
 
 # oh-my-zsh
 sudo apt-get -y install zsh
 echo vagrant | sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 ## GDB Tools
-cd ~/tools
 # Install peda
 git clone https://github.com/longld/peda.git
 # Install pwndbg
@@ -104,23 +107,22 @@ git clone https://github.com/zachriggle/pwndbg
 git clone https://github.com/hugsy/gef.git
 # Install voltron
 git clone https://github.com/snare/voltron.git
-cd voltron
+pushd voltron
 ./install.sh
+popd
 
 # fixenv
-cd ~/tools
 wget https://raw.githubusercontent.com/hellman/fixenv/master/r.sh
 mv r.sh fixenv
 chmod +x fixenv
 
 # AFL Fuzzer
-cd ~/tools
 wget http://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz
 tar -zxvf afl-latest.tgz
-cd
-cd afl-1.96b
+pushd afl-*
 make && sudo make install
-cd && mv afl-1.96b tools && rm afl-latest.tgz
+popd
+rm afl-latest.tgz
 
 # Enable 32bit binaries on 64bit host
 sudo dpkg --add-architecture i386
@@ -129,7 +131,6 @@ sudo apt-get -y upgrade
 sudo apt-get -y install libc6:i386 libncurses5:i386 libstdc++6:i386
 
 # Install z3 theorem prover
-cd ~/tools
 git clone https://github.com/Z3Prover/z3.git && cd z3
 python scripts/mk_make.py --python
 cd build; make && sudo make install
