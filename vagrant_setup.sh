@@ -81,18 +81,17 @@ sudo apt-get -y install git build-essential zlib1g-dev liblzma-dev python-magic
 sudo pip2 uninstall capstone -y
 
 # Install correct capstone
-cd ~/tools/capstone/bindings/python
+pushd capstone/bindings/python
 sudo python setup.py install
+popd
 
 # Install Angr
-cd
-pushd tools
 sudo apt-get -y install python-dev libffi-dev build-essential virtualenvwrapper
 sudo pip install virtualenv
 virtualenv angr
 source angr/bin/activate
 pip install angr --upgrade
-popd
+deactivate
 
 # oh-my-zsh
 sudo apt-get -y install zsh
