@@ -12,7 +12,6 @@ sudo apt-get -y install unzip
 sudo apt-get -y install build-essential
 sudo apt-get -y install unrar
 sudo apt-get -y install foremost
-
 sudo apt-get -y install htop
 
 # QEMU with MIPS/ARM - http://reverseengineering.stackexchange.com/questions/8829/cross-debugging-for-mips-elf-with-qemu-toolchain
@@ -38,13 +37,9 @@ sudo apt-get -y install libx32gcc-4.8-dev
 sudo apt-get -y install libc6-dev-i386
 
 # Install Pwntools
-sudo apt-get -y install software-properties-common
-echo | sudo apt-add-repository ppa:pwntools/binutils
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get install -y python-ctypeslib
-sudo apt-get -y install python2.7 python-pip python-dev git
-sudo pip install --upgrade git+https://github.com/Gallopsled/pwntools#egg=pwntools
+sudo apt-get -y install python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential
+sudo pip install --upgrade pip
+sudo pip install --upgrade pwntools
 
 cd
 mkdir tools
@@ -73,9 +68,6 @@ git clone https://github.com/devttys0/binwalk
 pushd binwalk
 sudo python setup.py install
 popd
-
-# Install Firmware-Mod-Kit (Removed)
-sudo apt-get -y install git build-essential zlib1g-dev liblzma-dev python-magic
 
 # Uninstall capstone
 sudo pip2 uninstall capstone -y
