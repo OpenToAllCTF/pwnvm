@@ -119,7 +119,7 @@ rm afl-latest.tgz
 sudo dpkg --add-architecture i386
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y install libc6:i386 libncurses5:i386 libstdc++6:i386
+sudo apt-get -y install libc6:i386 libc6-dbg:i386 libncurses5:i386 libstdc++6:i386
 
 # Install z3 theorem prover
 git clone https://github.com/Z3Prover/z3.git && cd z3
