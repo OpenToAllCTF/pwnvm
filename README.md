@@ -10,6 +10,13 @@ This is an attempt to make it super easy to get set up with a VM you can use to 
 3. Clone this project and `cd` to clone dir.
 4. Build VM and provision: `vagrant up`
 
+### Note
+If you're on a Debian-based system and receive a "no usable providers" error, uninstall vagrant, download the .deb package from the official website and install it.
+
+`sudo apt-get remove vagrant`
+
+`wget https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.deb && sudo dpkg -i vagrant*`
+
 ## Usage
 `vagrant ssh`
 
