@@ -20,5 +20,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.gui = false
     end
   end
+  config.vm.define "pwn32", autostart: false do |u32|
+    u32.vm.box = "puphpet/ubuntu1604-i386"
+    u32.vm.network "private_network", ip: "10.10.10.11"
+    u32.vm.provider "virtualbox" do |vb|
+      vb.customize ['modifyvm', :id, '--cableconnected1', 'on']
+      vb.name = "pwn ubuntu32"
+      vb.memory = "1024"
+      vb.gui = false
+    end
+  end
 
 end
