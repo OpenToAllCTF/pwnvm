@@ -5,7 +5,6 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 sudo apt-get -y install python3-pip
-sudo apt-get -y install tmux
 sudo apt-get -y install screen
 sudo apt-get -y install gdb gdb-multiarch
 sudo apt-get -y install unzip
@@ -88,6 +87,21 @@ deactivate
 # oh-my-zsh
 sudo apt-get -y install zsh
 echo vagrant | sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+# tmux
+wget https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz
+tar -zxvf tmux-2.5.tar.gz
+pushd tmux-2.5
+sudo apt-get -y install libevent-dev
+sudo apt-get -y install libncurses-dev
+./configure && make && sudo make install
+popd
+rm -rf tmux-2.5.tar.gz
+rm -rf tmux-2.5
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 ## GDB Tools
 # Install peda
