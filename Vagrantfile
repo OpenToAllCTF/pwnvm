@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       override.vm.box ="geerlingguy/ubuntu1604"
       override.vm.network "private_network", ip: "10.10.10.10"
       
-      vb.name = "pwn-test"
+      vb.name = "pwn"
       vb.memory = "2048"
       vb.gui = false
     end
