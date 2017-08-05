@@ -7,15 +7,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.username = "vagrant"
   config.ssh.forward_agent = true
   config.vm.provision :shell, :path => "vagrant_setup.sh", :privileged => false
-  # Sync a folder between the host and all guests.
-  # Uncomment this line (and adjust as you like)
-  #config.vm.synced_folder "~/code", "/code"
 
   config.vm.define "pwn", primary: true do |u64|
     u64.vm.provider "virtualbox" do |vb, override|
       override.vm.box ="geerlingguy/ubuntu1604"
       override.vm.network "private_network", ip: "10.10.10.10"
-      
+      # Sync a folder between the host and all guests.
+      # Uncomment this line (and adjust as you like)
+      #override.vm.synced_folder "~/code", "/code"
+
       vb.name = "pwn"
       vb.memory = "2048"
       vb.gui = false
