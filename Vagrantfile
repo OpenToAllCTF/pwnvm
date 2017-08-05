@@ -19,6 +19,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.memory = "2048"
       vb.gui = false
     end
+    u64.vm.box = "algebro/ubuntu1604"
+    u64.vm.network "private_network", ip: "10.10.10.10"
+    u64.vm.provider "libvirt" do |lv|
+      lv.memory = "2048"
+      lv.graphics_type = "none"
+    end
   end
 
 end
