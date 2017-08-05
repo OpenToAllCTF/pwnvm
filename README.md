@@ -3,7 +3,9 @@
 This is an attempt to make it super easy to get set up with a VM you can use to play CTFs.
 
 ## Installation
-1. Install VirtualBox.
+1. Install a hypervisor. The following hypervisors are supported:
+   * VirtualBox (default, recommended)
+   * libvirt (requires vagrant-libvirt provider [here](https://github.com/vagrant-libvirt/vagrant-libvirt))
 2. Install Vagrant:
    * OSX: `brew cask install vagrant`
    * Linux: `sudo apt-get install vagrant`
