@@ -10,7 +10,9 @@ This is an attempt to make it super easy to get set up with a VM you can use to 
    * OSX: `brew cask install vagrant`
    * Linux: `sudo apt-get install vagrant`
 3. Clone this project and `cd` to clone dir.
-4. Build VM and provision: `vagrant up`
+4. Build VM and provision:
+   * VirtualBox: `vagrant up`
+   * libvirt: `vagrant up --provider=libvirt`
 
 ### Note
 If you're on a Debian-based system and receive a "no usable providers" error, uninstall vagrant, download the .deb package from the official website and install it.
