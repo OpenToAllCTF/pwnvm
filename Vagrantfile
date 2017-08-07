@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       # NOTE: Requires installation of the nfs-server package on the host machine
       # If `vagrant up` hangs at Mounting NFS folders, modify your firewall configuration
       # to allow nfs, rpc, and mountd services     
-      override.vm.synced_folder "~/ctf", "/ctf", :nfs => true
+      #override.vm.synced_folder "~/ctf", "/ctf", :nfs => true
       lv.memory = "2048"
       lv.graphics_type = "none"
     end
