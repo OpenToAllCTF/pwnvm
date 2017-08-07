@@ -3,12 +3,16 @@
 This is an attempt to make it super easy to get set up with a VM you can use to play CTFs.
 
 ## Installation
-1. Install VirtualBox.
+1. Install a hypervisor. The following hypervisors are supported:
+   * VirtualBox (default, recommended)
+   * libvirt (requires vagrant-libvirt provider, which can be found [here](https://github.com/vagrant-libvirt/vagrant-libvirt))
 2. Install Vagrant:
    * OSX: `brew cask install vagrant`
    * Linux: `sudo apt-get install vagrant`
 3. Clone this project and `cd` to clone dir.
-4. Build VM and provision: `vagrant up`
+4. Build VM and provision:
+   * If using VirtualBox: `vagrant up`
+   * If using libvirt: `vagrant up --provider=libvirt`
 
 ### Note
 If you're on a Debian-based system and receive a "no usable providers" error, uninstall vagrant, download the .deb package from the official website and install it.
