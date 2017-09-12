@@ -35,6 +35,9 @@ rm /etc/apt/sources.list.d/emdebian.list
 sudo apt-get -y install libx32gcc-4.8-dev
 sudo apt-get -y install libc6-dev-i386
 
+# Install ARM binutils
+sudo apt-get install binutils-arm-linux-gnueabi
+
 # Install Pwntools
 sudo apt-get -y install python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential
 sudo pip install --upgrade pip
