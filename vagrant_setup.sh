@@ -92,15 +92,15 @@ sudo apt-get -y install zsh
 echo vagrant | sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 # tmux
-wget https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz
-tar -zxvf tmux-2.5.tar.gz
-pushd tmux-2.5
+wget https://github.com/tmux/tmux/releases/download/2.6/tmux-2.6.tar.gz
+tar -zxvf tmux-2.6.tar.gz
+pushd tmux-2.6
 sudo apt-get -y install libevent-dev
 sudo apt-get -y install libncurses-dev
 ./configure && make && sudo make install
 popd
-rm -rf tmux-2.5.tar.gz
-rm -rf tmux-2.5
+rm -rf tmux-2.6.tar.gz
+rm -rf tmux-2.6
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
